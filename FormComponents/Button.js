@@ -1,11 +1,16 @@
-import classes from '../Button.module.css';
+import classes from '../Components/Button.module.css';
 
 const Button = (props) => {
+    const clickButon = (event) => {
+        props.onClick();
+    }   
+
     return (
         <button 
         className={classes.button}
         type={props.type || 'button'}
-        >{props.children}</button>)
+        onClick={clickButon}
+        >   
+        {props.children}</button>)
 }
-
 export default Button;
